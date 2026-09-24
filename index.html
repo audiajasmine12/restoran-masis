@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restoran Masis - Cita Rasa Kuliner Nusantara</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth; /* Efek scroll halus */
+        }
+
+        :root {
+            --primary-color: #d9534f;
+            --secondary-color: #f0ad4e;
+            --dark-color: #2c3e50;
+            --light-bg: #fdfbf7;
+            --white: #ffffff;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+            padding: 0 20px;
+        }
+
+        .hero h1 { font-size: 2.8rem; margin-bottom: 10px; }
+        .hero p { font-size: 1.1rem; max-width: 600px; }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .section-box {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 5px;
+        }
+
+        .instruction-list {
+            margin-left: 20px;
+            line-height: 1.8;
+        }
+
+        .nested-menu-list {
+            margin-left: 20px;
+            line-height: 1.8;
+        }
+
+        .nested-menu-list > li {
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-top: 10px;
+            color: var(--dark-color);
+        }
+
+        .nested-menu-list ul {
+            font-weight: normal;
+            font-size: 0.95rem;
+            margin-left: 20px;
+            list-style-type: disc;
+        }
+
+        footer {
+            background-color: var(--dark-color);
+            color: var(--white);
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo"><i class="fa-solid fa-utensils"></i> Restoran Masis</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Daftar Menu</a></li>
+                <li><a href="gallery.html">Gallery & Video</a></li>
+                <li><a href="#kontak">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <h1>Selamat Datang di Restoran Masis</h1>
+        <p>Nikmati perpaduan rasa khas Nusantara dengan pelayanan terbaik dan sajian bermutu tinggi.</p>
+    </section>
+
+    <div class="container">
+        
+        <!-- PARAGRAF PENJELASAN UTAMA -->
+        <div class="section-box">
+            <h2>Tentang Layanan Kami</h2>
+            <p>
+                Restoran Masis berkomitmen untuk menyajikan makanan khas Indonesia dengan bahan-bahan pilihan yang selalu segar. Kami menyediakan berbagai variasi hidangan mulai dari makanan berat, hidangan penutup (dessert), hingga minuman rempah tradisional. Anda dapat melakukan pemesanan langsung di tempat maupun secara daring melalui WhatsApp.
+            </p>
+        </div>
+        
+        <div id="menu" class="section-box">
+            <h2>Kategori & Menu Restoran</h2>
+            <p>Berikut adalah rincian daftar menu berdasarkan kategorinya:</p>
+            
+            <ul class="nested-menu-list">
+                <li>Makanan Utama
+                    <ul>
+                        <li>Nasi Goreng Spesial - Rp 25.000 ($1.42)</li>
+                        <li>Ayam Bakar Taliwang - Rp 30.000 ($1.70)</li>
+                        <li>Soto Ayam Madura - Rp 22.000 ($1.25)</li>
+                        <li>Rendang Daging Sapi - Rp 35.000 ($1.99)</li>
+                        <li>Gulai Kepala Ikan - Rp 40.000 ($2.27)</li>
+                    </ul>
+                </li>
+                <li>Snack Tradisional & Dessert
+                    <ul>
+                        <li>Kue Lupis Ketan - Rp 10.000 ($0.57)</li>
+                        <li>Mendoan Hangat - Rp 8.000 ($0.45)</li>
+                        <li>Es Cendol Durian - Rp 15.000 ($1.00)</li>
+                    </ul>
+                </li>
+                <li>Minuman Segar
+                    <ul>
+                        <li>Es Teh Manis - Rp 5.000 ($0.28)</li>
+                        <li>Es Jeruk Peras - Rp 7.000 ($0.40)</li>
+                        <li>Wedang Jahe Rempah - Rp 10.000 ($0.57)</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="section-box">
+            <h2>Panduan 5 Langkah Pemesanan Makanan</h2>
+            <p>Ikuti langkah-langkah berikut untuk memesan hidangan favorit Anda secara praktis:</p>
+            
+            <ol class="instruction-list">
+                <li><strong>Pilih Menu:</strong> Amati dan pilih hidangan yang Anda inginkan dari daftar kategori menu di atas.</li>
+                <li><strong>Pilih Metode Pemesanan:</strong> Tentukan apakah ingin memesan langsung di meja (Dine-in), Takeaway, atau melalui WhatsApp.</li>
+                <li><strong>Sampaikan Pesanan:</strong> Beritahukan item menu beserta jumlah porsi yang Anda inginkan kepada kasir atau pelayan.</li>
+                <li><strong>Lakukan Pembayaran:</strong> Selesaikan transaksi pembayaran menggunakan metode Tunai, Transfer Bank, atau QRIS.</li>
+                <li><strong>Terima & Nikmati Sajian:</strong> Tunggu beberapa saat hingga pesanan disajikan hangat di meja Anda atau siap dibawa pulang.</li>
+            </ol>
+        </div>
+
+        <div id="kontak" class="section-box">
+            <h2>Lokasi & Kontak</h2>
+            <p>
+                <strong>Alamat:</strong> Jl. Dahlia No. 12, Larangan, Brebes<br>
+                <strong>Jam Operasional:</strong> Setiap Hari (09.00 - 22.00 WIB)<br>
+                <strong>No. Telepon / WhatsApp:</strong> 0812-3456-7890<br>
+                <strong>Email:</strong> info@restoranmasis.com
+            </p>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Restoran Masis. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
