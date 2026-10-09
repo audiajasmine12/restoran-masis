@@ -13,7 +13,7 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Poppins', sans-serif;
-            scroll-behavior: smooth; /* Efek scroll halus */
+            scroll-behavior: smooth;
         }
 
         :root {
@@ -112,24 +112,65 @@
             line-height: 1.8;
         }
 
-        .nested-menu-list {
-            margin-left: 20px;
-            line-height: 1.8;
-        }
+        /* ===== TABEL ===== */
+        .scroll-x { overflow-x: auto; }
 
-        .nested-menu-list > li {
-            font-weight: bold;
-            font-size: 1.1rem;
-            margin-top: 10px;
-            color: var(--dark-color);
-        }
-
-        .nested-menu-list ul {
-            font-weight: normal;
+        table.data {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
             font-size: 0.95rem;
-            margin-left: 20px;
-            list-style-type: disc;
         }
+
+        table.data caption {
+            caption-side: top;
+            text-align: left;
+            font-weight: 600;
+            color: var(--dark-color);
+            padding-bottom: 8px;
+        }
+
+        table.data th,
+        table.data td {
+            border: 1px solid #ddd;
+            padding: 10px 12px;
+            vertical-align: middle;
+        }
+
+        table.data thead th {
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+        }
+
+        table.data tbody tr:hover td {
+            background-color: #fff3e0;
+        }
+
+        table.data td.kategori {
+            background-color: #fdeccf;
+            font-weight: 700;
+            color: var(--dark-color);
+            text-align: center;
+        }
+
+        table.data td.foto {
+            width: 110px;
+            text-align: center;
+            padding: 6px;
+        }
+
+        table.data td.foto img {
+            width: 90px;
+            height: 70px;
+            object-fit: cover;
+            border-radius: 6px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        table.data td.angka { text-align: right; white-space: nowrap; }
+        table.data td.tengah { text-align: center; }
 
         footer {
             background-color: var(--dark-color);
@@ -149,6 +190,7 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#menu">Daftar Menu</a></li>
                 <li><a href="gallery.html">Gallery & Video</a></li>
+                <li><a href="fpendaftaran.html">Pendaftaran</a></li>
                 <li><a href="#kontak">Kontak</a></li>
             </ul>
         </nav>
@@ -161,7 +203,6 @@
 
     <div class="container">
         
-        <!-- PARAGRAF PENJELASAN UTAMA -->
         <div class="section-box">
             <h2>Tentang Layanan Kami</h2>
             <p>
@@ -169,35 +210,93 @@
             </p>
         </div>
         
+        <!-- TABEL DAFTAR MENU -->
         <div id="menu" class="section-box">
             <h2>Kategori & Menu Restoran</h2>
             <p>Berikut adalah rincian daftar menu berdasarkan kategorinya:</p>
-            
-            <ul class="nested-menu-list">
-                <li>Makanan Utama
-                    <ul>
-                        <li>Nasi Goreng Spesial - Rp 25.000 ($1.42)</li>
-                        <li>Ayam Bakar Taliwang - Rp 30.000 ($1.70)</li>
-                        <li>Soto Ayam Madura - Rp 22.000 ($1.25)</li>
-                        <li>Rendang Daging Sapi - Rp 35.000 ($1.99)</li>
-                        <li>Gulai Kepala Ikan - Rp 40.000 ($2.27)</li>
-                    </ul>
-                </li>
-                <li>Snack Tradisional & Dessert
-                    <ul>
-                        <li>Kue Lupis Ketan - Rp 10.000 ($0.57)</li>
-                        <li>Mendoan Hangat - Rp 8.000 ($0.45)</li>
-                        <li>Es Cendol Durian - Rp 15.000 ($1.00)</li>
-                    </ul>
-                </li>
-                <li>Minuman Segar
-                    <ul>
-                        <li>Es Teh Manis - Rp 5.000 ($0.28)</li>
-                        <li>Es Jeruk Peras - Rp 7.000 ($0.40)</li>
-                        <li>Wedang Jahe Rempah - Rp 10.000 ($0.57)</li>
-                    </ul>
-                </li>
-            </ul>
+
+            <div class="scroll-x">
+                <table class="data" border="1" cellspacing="0" cellpadding="8">
+                    <thead>
+                        <tr>
+                            <th colspan="2" rowspan="2">Kategori</th>
+                            <th rowspan="2">Nama Menu</th>
+                            <th colspan="2">Harga</th>
+                        </tr>
+                        <tr>
+                            <th>Rupiah (Rp)</th>
+                            <th>Dolar (US$)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="kategori" rowspan="5">Makanan Utama</td>
+                            <td class="foto"><img src="nasgor.jpeg" alt="Nasi Goreng Spesial"></td>
+                            <td>Nasi Goreng Spesial</td>
+                            <td class="angka">Rp 25.000</td>
+                            <td class="angka">$1.42</td>
+                        </tr>
+                        <tr>
+                            <td class="foto"><img src="ayamtaliwang.jpeg" alt="Ayam Bakar Taliwang"></td>
+                            <td>Ayam Bakar Taliwang</td>
+                            <td class="angka">Rp 30.000</td>
+                            <td class="angka">$1.70</td>
+                        </tr>
+                        <tr>
+                            <td class="foto"><img src="soto.jpeg" alt="Soto Ayam Madura"></td>
+                            <td>Soto Ayam Madura</td>
+                            <td class="angka">Rp 22.000</td>
+                            <td class="angka">$1.25</td>
+                        </tr>
+                        <tr>
+                            <td class="foto"><img src="rendang.jpeg" alt="Rendang Daging Sapi"></td>
+                            <td>Rendang Daging Sapi</td>
+                            <td class="angka">Rp 35.000</td>
+                            <td class="angka">$1.99</td>
+                        </tr>
+                        <tr>
+                            <td class="foto"><img src="gulai.jpeg" alt="Gulai Kepala Ikan"></td>
+                            <td>Gulai Kepala Ikan</td>
+                            <td class="angka">Rp 40.000</td>
+                            <td class="angka">$2.27</td>
+                        </tr>
+
+                        <tr>
+                            <td class="kategori" rowspan="2">Snack Tradisional & Dessert</td>
+                            <td class="foto"><img src="dessert.jpeg" alt="Kue Lupis Ketan"></td>
+                            <td>Kue Lupis Ketan</td>
+                            <td class="angka">Rp 10.000</td>
+                            <td class="angka">$0.57</td>
+                        </tr>
+                        <tr>
+                            <td class="foto"><img src="tempe mendoan.jpeg" alt="Mendoan Hangat"></td>
+                            <td>Mendoan Hangat</td>
+                            <td class="angka">Rp 8.000</td>
+                            <td class="angka">$0.45</td>
+                        </tr>
+
+                        <tr>
+                            <td class="kategori" rowspan="3">Minuman</td>
+                            <td class="foto"><img src="esteh.jpeg" alt="Es Teh Manis"></td>
+                            <td>Es Teh Manis</td>
+                            <td class="angka">Rp 5.000</td>
+                            <td class="angka">$0.28</td>
+                        </tr>
+                        <tr>
+                            <td class="foto"><img src="esjeruk.jpeg" alt="Es Jeruk Peras"></td>
+                            <td>Es Jeruk Peras</td>
+                            <td class="angka">Rp 7.000</td>
+                            <td class="angka">$0.40</td>
+                        </tr>
+                        <tr>
+                            <td class="foto"><img src="wedang.jpeg" alt="Wedang Jahe Rempah"></td>
+                            <td>Wedang Jahe Rempah</td>
+                            <td class="angka">Rp 10.000</td>
+                            <td class="angka">$0.57</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
 
         <div class="section-box">
@@ -213,11 +312,45 @@
             </ol>
         </div>
 
+        <!-- TABEL JAM OPERASIONAL -->
+        <div id="jam" class="section-box">
+            <h2>Jam Operasional</h2>
+            <p>Berikut jadwal operasional Restoran Masis:</p>
+
+            <div class="scroll-x">
+                <table class="data" border="1" cellspacing="0" cellpadding="8">
+                    <thead>
+                        <tr>
+                            <th>Hari</th>
+                            <th>Waktu (WIB)</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Senin</td>
+                            <td class="tengah" colspan="2">Libur</td>
+                        </tr>
+                        <tr>
+                            <td>Selasa - Jumat</td>
+                            <td class="tengah">09.00 - 22.00</td>
+                            <td class="tengah">Buka</td>
+                        </tr>
+                        <tr>
+                            <td>Sabtu - Minggu</td>
+                            <td class="tengah">09.00 - 23.59</td>
+                            <td class="tengah">Buka</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
         <div id="kontak" class="section-box">
             <h2>Lokasi & Kontak</h2>
             <p>
                 <strong>Alamat:</strong> Jl. Dahlia No. 12, Larangan, Brebes<br>
-                <strong>Jam Operasional:</strong> Setiap Hari (09.00 - 22.00 WIB)<br>
+                <strong>Jam Operasional:</strong> Selasa - Jumat (09.00 - 22.00 WIB), Sabtu - Minggu (09.00 - 23.59 WIB), Senin libur<br>
                 <strong>No. Telepon / WhatsApp:</strong> 0812-3456-7890<br>
                 <strong>Email:</strong> info@restoranmasis.com
             </p>
