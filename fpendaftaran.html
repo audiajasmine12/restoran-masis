@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Pemesanan - Restoran Masis</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+
+        :root {
+            --primary-color: #d9534f;
+            --secondary-color: #f0ad4e;
+            --dark-color: #2c3e50;
+            --light-bg: #fdfbf7;
+            --white: #ffffff;
+        }
+
+        body { background-color: var(--light-bg); color: #333; line-height: 1.6; }
+
+        header { background-color: var(--white); box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
+        .navbar { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 1rem 2rem; }
+        .logo { font-size: 1.8rem; font-weight: 700; color: var(--primary-color); text-decoration: none; }
+        .nav-links { display: flex; list-style: none; gap: 20px; }
+        .nav-links a { text-decoration: none; color: var(--dark-color); font-weight: 500; transition: color 0.3s; }
+        .nav-links a:hover { color: var(--primary-color); }
+
+        .container { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
+
+        .section-box { background: var(--white); padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 30px; }
+
+        h2 { color: var(--primary-color); margin-bottom: 15px; border-bottom: 2px solid var(--secondary-color); padding-bottom: 5px; }
+
+        /* ===== FORM (struktur modul: form > h1, hr) + TABEL FORM ===== */
+        form h1 { color: var(--dark-color); font-size: 1.8rem; margin-top: 15px; }
+        form hr { border: none; border-top: 2px solid var(--secondary-color); margin: 8px 0 12px; }
+        .info { font-size: 0.9rem; color: #666; }
+
+        .scroll-x { overflow-x: auto; }
+
+        table.form-table { border-collapse: collapse; margin-top: 10px; width: 100%; }
+        table.form-table td { padding: 8px 10px; vertical-align: middle; }
+        table.form-table td.label { white-space: nowrap; font-weight: 600; color: var(--dark-color); }
+        table.form-table td.sep { width: 15px; text-align: center; }
+        table.form-table td.judul {
+            background-color: #fdeccf;
+            font-weight: 700;
+            color: var(--dark-color);
+            text-align: center;
+            border-radius: 6px;
+        }
+
+        input[type="text"], input[type="date"], select, textarea {
+            padding: 7px 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 0.95rem;
+        }
+        textarea { resize: vertical; }
+
+        input[type="text"]:focus, input[type="date"]:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 2px rgba(217,83,79,0.2);
+        }
+
+        .pilihan label { display: inline-block; margin-right: 14px; }
+        .hobby label { display: block; }
+
+        .menu-item { margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+        .payment-option { margin-bottom: 12px; }
+        .payment-option img { height: 24px; vertical-align: middle; margin-left: 5px; }
+
+        .tombol input {
+            padding: 9px 28px;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            color: var(--white);
+            margin-right: 8px;
+        }
+        .tombol input[type="submit"] { background-color: var(--primary-color); }
+        .tombol input[type="reset"] { background-color: var(--dark-color); }
+        .tombol input:hover { opacity: 0.88; }
+
+        footer { background-color: var(--dark-color); color: var(--white); text-align: center; padding: 20px; margin-top: 40px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo"><i class="fa-solid fa-utensils"></i> Restoran Masis</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#menu">Daftar Menu</a></li>
+                <li><a href="gallery.html">Gallery & Video</a></li>
+                <li><a href="fpendaftaran.html">Pemesanan</a></li>
+                <li><a href="index.html#kontak">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="section-box">
+            <p>Isi data di bawah ini untuk melakukan pemesanan makanan, minuman, atau reservasi di Restoran Masis.</p>
+            <p class="info">Restoran libur setiap hari Senin. Jam operasional: Selasa - Jumat 09.00 - 22.00 WIB, Sabtu - Minggu 09.00 - 23.59 WIB.</p>
+
+<form>
+<h1>Form Pemesanan</h1><hr>
+
+            <div class="scroll-x">
+                <table class="form-table" border="0" cellspacing="0" cellpadding="0">
+                    <!-- DATA PEMESAN -->
+                    <tr>
+                        <td colspan="3" class="judul">DATA PEMESAN</td>
+                    </tr>
+                    <tr>
+                        <td class="label">NAMA LENGKAP</td>
+                        <td class="sep">:</td>
+                        <td><input type="text" size="30" name="nama_lengkap" placeholder="Masukkan nama lengkap" required></td>
+                    </tr>
+                    <tr>
+                        <td class="label">NO HP</td>
+                        <td class="sep">:</td>
+                        <td><input type="text" size="20" name="no_hp" placeholder="Contoh: 081234567890" required></td>
+                    </tr>
+                    <tr>
+                        <td class="label">TANGGAL BOOKING</td>
+                        <td class="sep">:</td>
+                        <td><input type="date" name="tgl_booking" required></td>
+                    </tr>
+
+                    <!-- PILIHAN MENU PESANAN -->
+                    <tr>
+                        <td colspan="3" class="judul">PILIHAN MENU PESANAN</td>
+                    </tr>
+                    <tr>
+                        <td class="label">MAKANAN Utama</td>
+                        <td class="sep">:</td>
+                        <td>
+                            <div class="menu-item">
+                                <label><input type="checkbox" name="menu[]" value="Nasi Goreng Spesial"> Nasi Goreng Spesial</label>
+                                &nbsp;— Jumlah: <input type="text" size="3" name="jumlah_nasgor" placeholder="0">
+                            </div>
+                            <div class="menu-item">
+                                <label><input type="checkbox" name="menu[]" value="Ayam Bakar Taliwang"> Ayam Bakar Taliwang</label>
+                                &nbsp;— Jumlah: <input type="text" size="3" name="jumlah_ayam" placeholder="0">
+                            </div>
+                            <div class="menu-item">
+                                <label><input type="checkbox" name="menu[]" value="Rendang Daging Sapi"> Rendang Daging Sapi</label>
+                                &nbsp;— Jumlah: <input type="text" size="3" name="jumlah_rendang" placeholder="0">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label">MINUMAN</td>
+                        <td class="sep">:</td>
+                        <td>
+                            <div class="menu-item">
+                                <label><input type="checkbox" name="menu[]" value="Es Teh Manis"> Es Teh Manis</label>
+                                &nbsp;— Jumlah: <input type="text" size="3" name="jumlah_esteh" placeholder="0">
+                            </div>
+                            <div class="menu-item">
+                                <label><input type="checkbox" name="menu[]" value="Es Jeruk Peras"> Es Jeruk Peras</label>
+                                &nbsp;— Jumlah: <input type="text" size="3" name="jumlah_esjeruk" placeholder="0">
+                            </div>
+                            <div class="menu-item">
+                                <label><input type="checkbox" name="menu[]" value="Wedang Jahe Rempah"> Wedang Jahe Rempah</label>
+                                &nbsp;— Jumlah: <input type="text" size="3" name="jumlah_wedang" placeholder="0">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label">DESSERT & SNACK</td>
+                        <td class="sep">:</td>
+                        <td>
+                            <div class="menu-item">
+                                <label><input type="checkbox" name="menu[]" value="Kue Lupis Ketan"> Kue Lupis Ketan</label>
+                                &nbsp;— Jumlah: <input type="text" size="3" name="jumlah_lupis" placeholder="0">
+                            </div>
+                            <div class="menu-item">
+                                <label><input type="checkbox" name="menu[]" value="Mendoan Hangat"> Mendoan Hangat</label>
+                                &nbsp;— Jumlah: <input type="text" size="3" name="jumlah_mendoan" placeholder="0">
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- METODE PEMBAYARAN -->
+                    <tr>
+                        <td colspan="3" class="judul">METODE PEMBAYARAN</td>
+                    </tr>
+                    <tr>
+                        <td class="label">PILIHAN PEMBAYARAN</td>
+                        <td class="sep">:</td>
+                        <td>
+                            <div class="payment-option">
+                                <label>
+                                    <input type="radio" name="pembayaran" value="kartu_kredit_debit" required>
+                                    Kartu Debit / Kredit 
+                                    <i class="fa-brands fa-cc-visa" style="color: #1A1F71; font-size: 1.2rem;"></i>
+                                    <i class="fa-brands fa-cc-mastercard" style="color: #EB001B; font-size: 1.2rem;"></i>
+                                </label>
+                                <div style="margin-top: 5px; margin-left: 20px;">
+                                    <input type="text" size="25" name="no_kartu" placeholder="Masukkan nomor kartu">
+                                </div>
+                            </div>
+                            
+                            <div class="payment-option">
+                                <label>
+                                    <input type="radio" name="pembayaran" value="dompet_digital">
+                                    Dompet Digital / QRIS
+                                    <i class="fa-solid fa-wallet" style="color: #d9534f; font-size: 1.1rem;"></i>
+                                    <i class="fa-solid fa-qrcode" style="color: #333; font-size: 1.1rem;"></i>
+                                </label>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- TOMBOL SUBMIT -->
+                    <tr>
+                        <td colspan="3" class="tombol" align="center" style="padding-top: 15px;">
+                            <input type="submit" value="Submit Pemesanan">
+                            <input type="reset" value="Batal">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+</form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Restoran Masis. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
